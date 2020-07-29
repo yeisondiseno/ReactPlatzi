@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/styles/component/Carousel.scss';
 
 const Carousel = ({ children }) =>(
     <section className="carousel">
