@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Button from './Component/Button';
@@ -8,7 +8,7 @@ import HelloWorld from './Component/HelloWorld';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HelloWorld />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
