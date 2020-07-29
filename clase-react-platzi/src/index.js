@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Button from './Component/Button';
+import HelloWorld from './Component/HelloWorld';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Button />
+    <HelloWorld />
   </React.StrictMode>,
   document.getElementById('root')
 );
