@@ -1,0 +1,20 @@
+@import '../Animation.scss';
+
+.spinner{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.spinner--img{
+    display: flex;
+    height: 80px;
+    width: 80px;
+    animation-name: rotation, pulse-opacity;
+    animation-duration: 0.8s , 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
