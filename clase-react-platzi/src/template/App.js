@@ -1,5 +1,5 @@
-import React from 'react';
-import logo from '../logo.svg';
+import React, { useState, useEffect} from 'react';
+// import logo from '../logo.svg';
 import '../assets/styles/App.scss';
 import Header from '../Component/Header';
 import Search from '../Component/Search';
@@ -9,6 +9,27 @@ import CarouselItem from '../Component/CarouselItem';
 import Footer from '../Component/Footer';
 
 function App() {
+  const [ videos, setVideos ] = useState([]); 
+
+  useEffect(() => {
+    // const fetchVideos = async () => {
+    //   try {
+    //     const response = await fetch('http://localhost:3000/initialState');
+    //     const data = await response.json();
+    //     return setVideos(data);
+    //   } catch {
+    //     console.log('error');
+    //   }
+    // };
+    // fetchVideos();
+    // console.log(setVideos);
+    fetch('http://localhost:3000/initialState')
+      .then(response => response.json())
+      .then(data => setVideos(data));
+  }, []);
+
+  console.log(videos);
+
   return (
     <div className="App">
       <Header />
