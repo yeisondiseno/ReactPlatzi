@@ -20,7 +20,7 @@ const App = () => (
       <Route exact path="/register">
         <Register />
       </Route>
-      <Route>
+      <Route path="*">
         <NotFound />
       </Route>
     </Switch>
