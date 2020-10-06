@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useInitialState = (API) => {
+  
     const [ videos, setVideos ] = useState({ mylist: [], trends: [], originals: [] }); 
 
     useEffect(() => {
@@ -15,6 +16,7 @@ const useInitialState = (API) => {
       // };
       // fetchVideos();
       // console.log(setVideos);
+      // console.log(API);
       fetch(API)
         .then(response => response.json())
         .then(data => setVideos(data));
