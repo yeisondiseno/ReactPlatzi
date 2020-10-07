@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import '../assets/styles/component/Login.scss';
 
 import googleIcon from '../assets/img/google-icon.png';
@@ -31,7 +32,11 @@ const Login = () => (
         </div>
       </section>
       <p className="login__container--register">
-        No tienes ninguna cuenta <a href="">Regístrate</a>
+        No tienes ninguna cuenta   
+        <br/>
+        <Link to="/register">
+          Regístrate
+        </Link>
       </p>
     </section>
   </section>

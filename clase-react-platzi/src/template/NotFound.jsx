@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import '../assets/styles/component/NotFound.scss';
 
 const NotFound = () => (
@@ -9,9 +10,11 @@ const NotFound = () => (
         <h3>
             No encontrado
         </h3>
-        <button>
-            Regresar a Inicio
-        </button>
+        <Link to="/">
+            <button>
+                Regresar a Inicio
+            </button>
+        </Link>
     </div>
 );
 

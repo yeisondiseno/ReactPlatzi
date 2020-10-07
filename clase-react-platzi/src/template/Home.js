@@ -18,7 +18,7 @@ function Home() {
   const initialState = useInitialState(API);
 
   return initialState.length === 0 ? <Carga /> : (
-    <div className="App">
+    <>
       <Search />
 
       {initialState.mylist.length > 0 && (
@@ -47,7 +47,7 @@ function Home() {
         </Carousel>
       </Categories>
 
-    </div>
+    </>
   );
 }
 
