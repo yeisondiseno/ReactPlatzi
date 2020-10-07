@@ -19,7 +19,6 @@ function Home() {
 
   return initialState.length === 0 ? <Carga /> : (
     <div className="App">
-      <Header />
       <Search />
 
       {initialState.mylist.length > 0 && (
@@ -47,8 +46,6 @@ function Home() {
           )}
         </Carousel>
       </Categories>
-
-      <Footer />
 
     </div>
   );
