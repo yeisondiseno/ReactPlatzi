@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 // import logo from '../logo.svg';
 import '../assets/styles/App.scss';
 import Header from '../Component/Header';
@@ -11,17 +11,14 @@ import Carga from '../Component/Carga';
 // hook 
 import useInitialState from '../assets/hooks/useInitialState';
 
-
-
 const API = 'http://localhost:3000/initialState';
 
-function App() {
+function Home() {
 
   const initialState = useInitialState(API);
 
   return initialState.length === 0 ? <Carga /> : (
-    <div className="App">
-      <Header />
+    <>
       <Search />
 
       {initialState.mylist.length > 0 && (
@@ -50,10 +47,8 @@ function App() {
         </Carousel>
       </Categories>
 
-      <Footer />
-
-    </div>
+    </>
   );
 }
 
-export default App;
+export default Home;
