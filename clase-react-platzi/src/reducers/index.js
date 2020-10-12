@@ -3,7 +3,7 @@ const reducer = (state, action) => {
 
     switch (action.type){
         case 'SET_FAVORITE':
-            if (state.mylist.filter((e) => e.id === action.payload.id).length !== 0) {
+            if (state.mylist.filter( e => e.id === action.payload.id).length !== 0) {
                 return state;
             }
             return {
@@ -12,6 +12,11 @@ const reducer = (state, action) => {
                     ...state.mylist,
                     action.payload
                 ]
+            }
+        case 'DELETE_FAVORITE':
+            return {
+                ...state,
+                mylist: state.mylist.filter( e => e.id !== action.payload )
             }
 
         default:
