@@ -11,7 +11,7 @@ import App from './routes/App';
 const initialState = {
   "user": {},
   "playing": {},
-  "myList": [],
+  "mylist": [],
   "trends": [
     {
       id: 2,
@@ -185,6 +185,9 @@ const initialState = {
     },
   ],
 };
+
+
+console.log(initialState.mylist)
 
 const store = createStore(reducer, initialState);
 

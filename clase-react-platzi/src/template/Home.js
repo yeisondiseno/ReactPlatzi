@@ -12,21 +12,21 @@ import CarouselItem from '../Component/CarouselItem';
 // const API = 'http://localhost:3000/initialState'; se cambio por el redux
 
 function Home( { mylist, trends, originals } ) {
-
   // const initialState = useInitialState(API);
 
   return (
     <>
       <Search />
-      {mylist > 0 && (
+      {mylist.length > 0 ? 
         <Categories title="Mi lista">
           <Carousel>
-            {originals.map(item => 
+            {mylist.map(item => 
               <CarouselItem key={item.id} {...item} />
             )}
           </Carousel>
         </Categories>
-      )}
+        : ''
+      }
       <Categories title="Tendencias">
         <Carousel>
           {trends.map(item =>
@@ -47,7 +47,7 @@ function Home( { mylist, trends, originals } ) {
 
 const mapStateToProps = state => {
   return {
-    myList: state.myList,
+    mylist: state.mylist,
     trends: state.trends,
     originals: state.originals,
   }
