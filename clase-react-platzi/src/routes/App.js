@@ -7,6 +7,7 @@ import Login from '../template/Login';
 import Register from '../template/Register';
 import NotFound from '../template/NotFound.jsx';
 import Layout from '../Component/Layout';
+import Counter from '../Component/Prueba';
 
 const App = () => (
   // Leer la nueva documentación, es muy explícita
@@ -21,6 +22,9 @@ const App = () => (
         </Route>
         <Route exact path="/register">
           <Register />
+        </Route>
+          <Route exact path="/prueba">
+          <Counter users={[{firstName: 'Donald', lastName: 'Knuth'}, {firstName: 'Ada', lastName: 'Lovelace'}]} />
         </Route>
         <Route path="*">
           <NotFound />
