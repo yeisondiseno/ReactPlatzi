@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import { Link, withRouter } from "react-router-dom";
+import { loginRequest } from '../actions';
 import '../assets/styles/component/Login.scss';
 
 import googleIcon from '../assets/img/google-icon.png';
 import twitterIcon from '../assets/img/twitter-icon.png';
 
-const Login = () => {
+const Login = props => {
 
   const [ form, setForm ] = useState({
     email: '',
@@ -23,7 +25,9 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(form)
+    props.loginRequest(form);
+    props.history.push('/');
+    // console.log(form)
   }
 
   return(
@@ -54,11 +58,11 @@ const Login = () => {
         </form>
         <section className="login__container--social-media">
           <div>
-            <img src={googleIcon} />
+            <img src={googleIcon} alt='Google logo' />
             Inicia sesión con Google
           </div>
           <div>
-            <img src={twitterIcon} />
+            <img src={twitterIcon} alt='Twitter logo' />
             Inicia sesión con Twitter
           </div>
         </section>
@@ -74,6 +78,9 @@ const Login = () => {
   );
 }
 
+const mapDispatchToProps =  {
+  loginRequest,
+};
 
-
-export default Login;
+// export default Login;
+export default withRouter(connect(null, mapDispatchToProps)(Login));
