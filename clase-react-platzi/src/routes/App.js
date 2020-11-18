@@ -6,6 +6,7 @@ import Home from '../template/Home';
 import Login from '../template/Login';
 import Register from '../template/Register';
 import NotFound from '../template/NotFound.jsx';
+import Player from '../template/Player';
 import Layout from '../Component/Layout';
 import Counter from '../Component/Prueba';
 
@@ -23,8 +24,14 @@ const App = () => (
         <Route exact path="/register">
           <Register />
         </Route>
-          <Route exact path="/prueba">
-          <Counter users={[{firstName: 'Donald', lastName: 'Knuth'}, {firstName: 'Ada', lastName: 'Lovelace'}]} />
+        <Route exact path="/player/:id">
+          <Player />
+        </Route>
+        <Route exact path="/prueba">
+          <Counter users={[
+                  {firstName: 'Donald', lastName: 'Knuth'}, 
+                  {firstName: 'Ada', lastName: 'Lovelace'}]} 
+            />
         </Route>
         <Route path="*">
           <NotFound />
